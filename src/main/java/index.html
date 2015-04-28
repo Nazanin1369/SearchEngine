@@ -16,7 +16,7 @@
     <script src="angular/controller/SearchController.js"></script>
     <script src= "engineModule.js"></script>
 
-    <div layout-fill layout="column">
+    <div layout-fill layout="column" ng-controller="searchController">
         <ng-include src="'angular/view/toolbar.html'"></ng-include>
         <div layout-fill style="margin-top: 50px;  ">
              <ng-include src="'angular/view/content.html'"></ng-include>
