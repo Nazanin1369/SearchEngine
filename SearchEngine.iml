@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars:angularjs:1.3.15" level="project" />
+    <orderEntry type="library" name="Maven: com.asayama.gwt.angular:gwt-angular-ngAnimate:0.2.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.gwt:gwt-user:2.7.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:1.0.0.GA" level="project" />
+    <orderEntry type="library" name="Maven: javax.validation:validation-api:sources:1.0.0.GA" level="project" />
+    <orderEntry type="library" name="Maven: com.asayama.gwt.angular:gwt-angular-ng:0.2.1" level="project" />
+    <orderEntry type="library" name="Maven: com.asayama.gwt:gwt-util:0.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.velocity:velocity:1.7" level="project" />
+    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.4" level="project" />
+    <orderEntry type="library" name="Maven: com.asayama.gwt.angular:gwt-angular-resources:0.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.bower:angular-aria:1.3.15" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.bower:angular:1.3.15" level="project" />
+    <orderEntry type="library" name="angular-aria" level="application" />
+    <orderEntry type="library" name="angular-animate" level="application" />
+    <orderEntry type="library" name="angular-material" level="application" />
+    <orderEntry type="library" name="angular" level="application" />
+    <orderEntry type="library" name="angular-route" level="application" />
+  </component>
+</module>

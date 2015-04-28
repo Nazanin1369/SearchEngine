@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+    <title>ACM</title>
+</head>
+<body ng-app="engine">
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15//angular-route.js"></script>
+    <!-- Angular Material Javascript now available via Google CDN; version 0.8 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+    <script src="angular/controller/SearchController.js"></script>
+    <script src= "engineModule.js"></script>
+
+    <div layout-fill layout="column">
+        <ng-include src="'angular/view/toolbar.html'"></ng-include>
+        <div layout-fill style="margin-top: 50px;  ">
+             <ng-include src="'angular/view/content.html'"></ng-include>
+        </div>
+    </div>
+
+    <footer>
+        <ng-include src="'angular/view/bottomToolbar.html'"></ng-include>
+    </footer>
+</body>
+</html>
