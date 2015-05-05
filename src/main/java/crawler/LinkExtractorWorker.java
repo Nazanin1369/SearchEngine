@@ -37,16 +37,19 @@ public class LinkExtractorWorker extends RecursiveAction {
 
                 for (int i = 0; i < list.size(); i++) {
                     LinkTag extracted = (LinkTag) list.elementAt(i);
-                    if (!extracted.extractLink().isEmpty() && !manager.isVisited(extracted.extractLink())) {
-                        System.out.println("extracted Link: " + extracted.extractLink());
+                    if (!extracted.extractLink().isEmpty() && !manager.isVisited(extracted.extractLink()) && extracted.extractLink().contains("nodejs.org")) {
+                        //System.out.println("extracted Link: " + extracted.extractLink());
                         actions.add(new LinkExtractorWorker(extracted.extractLink(), manager));
                     }
                 }
 
                 manager.makeVisited(url);
 
-                if (manager.getVisitedLinksCount() == 1500) {
-                    System.out.println("Time for visit 1500 distinct links= " + (System.nanoTime() - t0));
+                if (manager.getVisitedLinksCount() == 5000) {
+                    System.out.println("******Time for visit 5000 distinct links= " + (System.nanoTime() - t0));
+                }
+                if (manager.getVisitedLinksCount() == 10000) {
+                    System.out.println("*****Time for visit 10000 distinct links= " + (System.nanoTime() - t0));
                 }
                 //invoke recursively
                 invokeAll(actions);

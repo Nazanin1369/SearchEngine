@@ -23,17 +23,14 @@ public class Crawler implements LinkManager {
         mainPool.invoke(new LinkExtractorWorker(this.url, this));
     }
 
-    @Override
     public int getVisitedLinksCount() {
         return visitedLinks.size();
     }
 
-    @Override
     public boolean isVisited(String link) {
         return visitedLinks.contains(link);
     }
 
-    @Override
     public void makeVisited(String link) {
         visitedLinks.add(link);
     }
