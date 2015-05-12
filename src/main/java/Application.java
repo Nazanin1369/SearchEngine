@@ -21,9 +21,4 @@ public class Application {
         MyCrawlerManager manager = new MyCrawlerManager();
         manager.instantiateController().start(MyCrawler.class, manager.numberOfCrawlers);
     }
-
-    public static void elasticSearch(){
-        Node node = nodeBuilder().clusterName("nazaninEngine").node();
-        Client client = node.client();
-    }
 }

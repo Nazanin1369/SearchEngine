@@ -27,7 +27,7 @@ public class MyCrawlerManager {
 
     public CrawlController instantiateController() throws Exception{
         CrawlController controller = new CrawlController(config, pageFetcher, robotstxtServer);
-        controller.addSeed("https://nodejs.org/");
+        controller.addSeed("http://web.mit.edu/");
         return  controller;
     }
 
