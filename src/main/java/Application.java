@@ -2,23 +2,25 @@
  * Created by nazanin on 4/16/15.
  */
 
-import crawler.Crawler;
 import crawler.MyCrawler;
 import crawler.MyCrawlerManager;
+import edu.uci.ics.crawler4j.crawler.CrawlController;
+import elastic.ElasticClient;
+import elastic.ElasticIndexer;
 import org.elasticsearch.client.Client;
-import org.elasticsearch.node.Node;
-
-
-import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
 
 
 public class Application {
 
     public static void main(String[] args) throws Exception{
-        //new Crawler("https://nodejs.org/", 64).startCrawling();
-
-        //Crawler4j
+        //Create ElasticSearch client
+        Client client = new ElasticClient().getClient();
+        //Crawler4j: Start Crawling and index it into Cluster
         MyCrawlerManager manager = new MyCrawlerManager();
-        manager.instantiateController().start(MyCrawler.class, manager.numberOfCrawlers);
+        CrawlController controller = manager.instantiateController();
+        controller.start(MyCrawler.class, manager.numberOfCrawlers);
+        controller.waitUntilFinish();
+        System.out.print("Crawling is done!");
+
     }
 }

@@ -6,6 +6,7 @@ import edu.uci.ics.crawler4j.parser.HtmlParseData;
 import edu.uci.ics.crawler4j.url.WebURL;
 import elastic.ElasticClient;
 import elastic.ElasticIndexer;
+import model.PageInfo;
 import model.UrlData;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.Client;
@@ -24,7 +25,12 @@ import java.util.regex.Pattern;
 public class MyCrawler extends WebCrawler {
     private final static Pattern FILTERS = Pattern.compile(".*(\\.(css|js|gif|jpg"
             + "|png|mp3|mp3|zip|gz))$");
-    HashMap<String, model.PageInfo> urlMap = new HashMap<String, model.PageInfo>();
+    Client elasticClient;
+
+    @Override
+    public void onStart() {
+        elasticClient = (Client) myController.getCustomData();
+    }
 
     @Override
     public boolean shouldVisit(Page referringPage, WebURL url) {
@@ -38,7 +44,7 @@ public class MyCrawler extends WebCrawler {
      */
     @Override
     public void visit(Page page){
-
+        HashMap<String, model.PageInfo> urlMap = new HashMap<String, model.PageInfo>();
         String url = page.getWebURL().getURL();
         int docid = page.getWebURL().getDocid();
         System.out.println("docid: " + docid);
@@ -55,12 +61,10 @@ public class MyCrawler extends WebCrawler {
             System.out.println("Html length: " + html.length());
             System.out.println("Number of outgoing links: " + links.size());
 
-            if(urlMap.size() == 30){
-                System.out.println("&**************100**************&");
-                new Thread(new ElasticIndexer(urlMap));
-                return;
-            }
-
+            //Give it to the Elastic search indexer
+            Thread t = new Thread(new ElasticIndexer(urlMap, elasticClient));
+            t.start();
         }
     }
+
 }
