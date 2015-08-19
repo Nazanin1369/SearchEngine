@@ -1,4 +1,5 @@
 # SearchEngine
 
 ### introduction
-Implementing a search engine using Java, AngularJS and Elastic search. 
+Implementing a search engine using Java, AngularJS and Elastic search.
+To gather data I used "Crawler4J" multithreaded fork/join approach. 
