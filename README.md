@@ -1,4 +1,4 @@
-# SearchEngine Project
+# Search ENGINE
 
 ### introduction
 Implementing a search engine using Java, AngularJS and Elastic search.
